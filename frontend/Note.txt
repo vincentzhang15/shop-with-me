@@ -1,1 +1,1 @@
-.
+Frontend initial version is based on https://github.com/Yog9/SnapShot which is a Gallery created using React Hooks, Context API and React Router.
