@@ -5,13 +5,8 @@
   </a>
   <br />
 
-  <!-- Badges -->
-  <img src="https://img.shields.io/github/languages/top/vincentzhang15/shop-with-me?style=for-the-badge" alt="License" height="25">
-  <img src="https://img.shields.io/github/repo-size/vincentzhang15/shop-with-me?style=for-the-badge" alt="GitHub repo size" height="25">
-  <img src="https://img.shields.io/github/last-commit/vincentzhang15/shop-with-me?style=for-the-badge" alt="GitHub last commit" height="25">
-  <br />
 
-  <h3 align="center">Shop with me</h3>
+  <h3 align="center">Shop With Me</h3>
   <p align="center">
     Grocery shopping made fun and easy.
     <!--br />
@@ -23,5 +18,10 @@
 
 ## About "Shop With Me"
 
-"Shop with me" is a web app that aims to futurize the in-store grocery shopping experience. It was built at Hack The Valley V in less than 38 hours.
+"Shop With Me" is a web application that futurizes, gamifies, and simplifies the process of in-store grocery shopping through three features:
 
+"Find it" - Guides a user to a good (e.g., food item) with virtual arrows in a physical retail space.
+"Ask me" - Filters a list of food items by nutrients according to a user's verbal inquiry.
+"Show me" - Filters a list of related products in the grocery store according to a product image captured from a device camera.
+
+It was built at Hack The Valley V in less than 38 hours.
