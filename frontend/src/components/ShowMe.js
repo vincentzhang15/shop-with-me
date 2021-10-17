@@ -1,14 +1,21 @@
 import React, { useContext, useState, useEffect } from "react";
 import { PhotoContext } from "../context/PhotoContext";
-import Gallery from "./Gallery";
-import Loader from "./Loader";
+import Container from "./Container";
+
+import Cookies from 'universal-cookie';
+
 
 const ShowMe = () => {
-  const { pageid } = useContext(PhotoContext);
+  const { pageid, lastSearch, setLastSearch, runSearch } = useContext(PhotoContext);
   var [seconds, setSeconds] = useState(0);
   var [label, setLabel] = useState("");
   const [currentTime, setCurrentTime] = useState(0); //////////////////////////////////
   const [productData, set_tfod_item] = useState(0); //////////////////////////////////
+
+  const cookies = new Cookies();
+  
+
+  fetch('http://localhost:5000/api/v1/find/nothing')
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +29,6 @@ const ShowMe = () => {
 
       if(pageid == 2)
       {
-
         fetch('http://localhost:5000/api/v1/label')
         .then(response => response.json())
         .then(data => {
@@ -36,33 +42,53 @@ const ShowMe = () => {
                                               +"<b>Label:</b> " + data.label + "<br/>"
                                               +"<b>Score:</b> " + data.score + "<br/>"
                                               +"<b>Time:</b> " + data.time + "</p>";
-                  if(data.score < 89)
+
+                  //if(data.score < 89)
+                  if(data.score < 80)
                   {
                     setLabel("_unknown_");
                     imageDescription.innerHTML +="<p></p>"
                   }
-                  else if(data.label !== label)                                            
+                  else
                   {
-                    setLabel(data.label);
-                    fetch('http://localhost:5000/api/v1/item/'+data.label)
-                    .then(response => response.json())
-                    .then(detail => {
-                        //console.log(detail)
-                        //console.log(detail.image, " _______ +++++++++++ DETAIL");
-                        imageDescription.innerHTML += "<p>text = " + detail.text + "</p>";
-                      })
-                      .catch(err => {
-                        console.log("Error: ", err);
-                      })
+                    let last_label = cookies.get('label2');
+                    if(last_label != data.label)
+                    {
+                      //setLastSearch(data.label);
+                      cookies.set('label2', data.label, { path: '/' });
+
+                      //if(data.label !== label)                                            
+
+                      setLabel(data.label);
+                      fetch('http://localhost:5000/api/v1/item/'+data.label)
+                      .then(response => response.json())
+                      .then(detail => {
+                          //console.log(detail)
+                          //console.log("search: ===", last_label, data.label, data, detail, detail.type)
+                          console.log("search: ===", detail.type, (detail.type != 'sign'))
+                          //console.log(detail.image, " _______ +++++++++++ DETAIL");
+                          if(detail.type != 'sign' )
+                          {
+                            runSearch(data.label);
+                            imageDescription.innerHTML += "<p>text = " + detail.text + "</p>";
+
+                            set_tfod_item(detail);
+                          }
+                        })
+                        .catch(err => {
+                          console.log("Error: ", err);
+                        })
                             
+                    }
                   }
-                }
+              }
               }
           )
           .catch(err => {
             console.log("Error: ", err);
           })
             
+          /*
           ////////////////////////////////////
           fetch('http://localhost:5000/time').then(res => res.json()).then(data => {
             setCurrentTime(data.time);
@@ -70,9 +96,10 @@ const ShowMe = () => {
           .catch(err => {
             console.log("Error: ", err);
           })
+          */
 
           //console.log(data + " =======================================================")
-
+          /*
 
           fetch('http://localhost:5000/api/v1/label')
           .then(response => response.json())
@@ -80,7 +107,7 @@ const ShowMe = () => {
 
                   label = data.label
                   var address = 'http://localhost:5000/api/v1/item/' + label
-                  console.log(address, '--------------------------$$$$$$$$$')
+                  // console.log(address, '--------------------------$$$$$$$$$')
                   fetch(address).then(res => res.json()).then(data => {
                     set_tfod_item(data);
                   })
@@ -92,12 +119,13 @@ const ShowMe = () => {
           .catch(err => {
             console.log("Error: ", err);
           })
+          */
   
 
           ////////////////////////////////////
 
         }
-      }, 500);
+      }, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -118,9 +146,9 @@ const ShowMe = () => {
       <div className="d_table" style={{marginTop: "50px"}}>
         <div className="d_tr">
             <div>{productData.desc}</div>
-            <div>{productData.desc}</div>
-            <div>{productData.desc}</div>
-            <div>{productData.desc}</div>
+            <div  style={{borderStyle: "none", borderWidth: "1px", borderRadius: "30px", textAlign: "left", margin: "5px",padding: "1.5em", backgroundColor: "#adece9", boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px"}}>
+            <Container searchTerm={"loblaw"} />
+            </div>
         </div>
       </div>
     </div>

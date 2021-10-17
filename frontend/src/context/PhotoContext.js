@@ -7,8 +7,13 @@ const PhotoContextProvider = props => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pageid, setPageid] = useState(0);
+  const [lastSearch, set_LastSearch] = useState(0);
   const setPage = page => {
     setPageid(page)
+  };
+  const setLastSearch = text => {
+    console.log("setLastSearch", text)
+    set_LastSearch(text)
   };
   const runSearch = query => {
     axios
@@ -27,7 +32,7 @@ const PhotoContextProvider = props => {
       });
   };
   return (
-    <PhotoContext.Provider value={{ images, loading, runSearch, pageid, setPage }}>
+    <PhotoContext.Provider value={{ images, loading, runSearch, pageid, setPage, lastSearch, setLastSearch }}>
       {props.children}
     </PhotoContext.Provider>
   );
