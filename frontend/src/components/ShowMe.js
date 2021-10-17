@@ -39,7 +39,7 @@ const ShowMe = () => {
                   if(data.score < 89)
                   {
                     setLabel("_unknown_");
-                    imageDescription.innerHTML +="<p><b>Instructions:</b><br/> 1. Point your camera at a label with <br/>a circular sticker.<br/>2. Follow the arrow on the screen.</p>"
+                    imageDescription.innerHTML +="<p></p>"
                   }
                   else if(data.label !== label)                                            
                   {
@@ -105,7 +105,7 @@ const ShowMe = () => {
     <div style={{paddingTop: "8vh"}}>
       <div className="d_table">
         <div className="d_tr">
-          <div className="titleText" style={{marginBottom: "40px"}}>Follow the Arrows</div> 
+          <div className="titleText" style={{marginBottom: "40px"}}>Take a photo</div> 
         </div>
         <div className="d_tr" id="group">
           <img id="myImage" src="/img/cameraIcon.jpg" alt="text"  width="320" height="220" style={{borderStyle: "dashed", borderWidth: "1px", borderRadius: "30px"}}/>

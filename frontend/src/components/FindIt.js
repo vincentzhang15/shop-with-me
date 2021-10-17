@@ -94,9 +94,9 @@ const FindIt = ( history, handleSubmit ) => {
       <div className="d_table">
         <div className="d_tr">
           <div className="d_td">
-            <div className="titleText" style={{marginBottom: "40px"}}>Take a photo</div> 
+            <div className="titleText" style={{marginBottom: "40px"}}>Follow the Arrows</div> 
             <img id="myImage" src="/img/cameraIcon.jpg" alt="text"  width="320" height="220" style={{borderStyle: "dashed", borderWidth: "1px", borderRadius: "30px"}}/>
-            {/*<Form history={history} handleSubmit={onSubmit} />*/}
+            <Form history={history} handleSubmit={onSubmit} />
           </div>
           {/*
           <div className="d_td" id="description">Some discriptions for find it  {seconds}</div>
