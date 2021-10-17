@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { PhotoContext } from "../context/PhotoContext";
 
-const Navigation = () => {
+const Tail = ({ history, handleSubmit }) => {
 
   const { setPage } = useContext(PhotoContext);
 
-  const history = useHistory();
+  //const history = useHistory();
 
   //clickMe(where) {
   const clickMe = (e, where,id) => {
@@ -16,12 +16,12 @@ const Navigation = () => {
   }
 
   return (
-    
-    <nav className="main-nav2">
+    <nav className="main-nav" style={{position: "absolute", bottom: 0}}>
       <ul>
-        <li><button onClick={e => clickMe(e, "showme",2)}>Show me</button></li>
-        <li><button onClick={e => clickMe(e, "askme",3)}>Ask me</button></li>
-        <li><button onClick={e => clickMe(e, "findit",4)}>Find it</button></li>
+        <li><button onClick={e => clickMe(e, "emailme",11)}>Email me</button></li>
+        <li><button onClick={e => clickMe(e, "whatelse",12)}>What else</button></li>
+        <li><button onClick={e => clickMe(e, "testupload",13)}>(Debug)Upload</button></li>
+        <li><button onClick={e => clickMe(e, "showme_debug",14)}>(Debug)Show me</button></li>
       </ul>
     </nav>
   );
@@ -34,4 +34,8 @@ const Navigation = () => {
 <li><NavLink to="/emailme">Email me</NavLink></li>
 */
 
-export default Navigation;
+// <Form history={history} handleSubmit={handleSubmit} />
+// 
+
+export default Tail;
+
