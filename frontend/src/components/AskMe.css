@@ -21,22 +21,35 @@ header {
   }
   
   .real-time-interface {
-    padding: 1.25% 0 0 2.5%;
+    /*padding: 1.25% 0 0 2.5%;*/
+    width: 20vw;
   }
   
   .real-time-interface__button {
-    display: flex;
-    padding: .5em;
+    display: inline-block;
+    padding:10px 30px;
+    /*padding: .5em;
     border-radius: .5rem;
+    background: #6b2bd6;
+    width: 5%;
+    */
+    border-radius: 50px;
     justify-content: center;
     cursor: pointer;
-    background: #6b2bd6;
+    background: #6bd9ca;
     color: white;
-    width: 5%;
+    margin-left: 10px;
     font-size: 18px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+
+  .real-time-interface__button:hover {
+    background-color: #fe9e53;
   }
   
   .real-time-interface__title {
+    display: inline-block;
+    text-align: left;
     margin-bottom: .5em;
     font-size: 18px;
     font-weight: 525;
@@ -48,7 +61,61 @@ header {
     margin-top: .5em;
     font-size: 19px;
     font-weight: 400;
-    box-shadow: 0 0 32px 0 rgb(0 0 0 / 16%);
+    /*box-shadow: 0 0 32px 0 rgb(0 0 0 / 16%);*/
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     padding: 1em;
     transition: .5s ease-in;
+  }
+
+  .prodImg {
+    width: 100%;
+  }
+  .prodImg:hover {
+        -webkit-filter: brightness(70%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+
+  @media only screen and (max-width: 767px) {
+    .real-time-interface {
+        /*padding: 1.25% 0 0 2.5%;*/
+        width: 80vw;
+      }     
+      .real-time-interface__button {
+        display: flex;
+        width: 63vw;
+      } 
+      .real-time-interface__title {
+        display: flex;
+        text-align: center;
+      }
+      
+      .real-time-interface__message {
+        text-align: center;
+      }
+  }
+
+  .column {
+    display: inline-block;
+    text-align: left;
+    /*width: 33.33%;*/
+    width: 30%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
   }

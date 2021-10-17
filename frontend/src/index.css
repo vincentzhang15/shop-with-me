@@ -20,7 +20,7 @@ body {
 }
 .d_td {
   display: table-cell;
-  padding-left:10px;
+  /*padding-left:10px;*/
   width:150px;
   vertical-align:top;
 }
@@ -74,9 +74,11 @@ h2 {
 h1 {
   /*font-family: "Lobster", "Josefin Sans", Helvetica, Arial, sans-serif;
   font-family: "Monaco", monospace;*/
-  font-size: 4em;
-  color: #051c33;
   margin: 0;
+  font-Size: 3.5em;
+  float: left;
+  display: inline-block;
+  color: #6bd9ca;
 }
 
 ul {
@@ -127,6 +129,12 @@ input {
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
+}
+
+.headerDiv {
+  width: 100%;
+  display: inline-block;
+  vertical-Align: middle;
 }
 
 .emphasisText {
@@ -222,17 +230,27 @@ input {
   padding: 10px;
   color: #fff;
   border: none;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   font-size: 0.8em;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 .main-nav2 .active,
+.main-nav2 button:hover,
 .main-nav2 a:hover {
-  background-color: #051c33;
+  background-color: #fe9e53;
 }
 
+#group {
+  display: block;
+}
+
+#showMeDescription {
+  /*display: none !important;*/
+  float: right;
+  max-width: 250px;
+}
 
 .photo-container ul {
   display: flex;
@@ -301,9 +319,9 @@ input {
 
   h1 {
     /*font-family: "Lobster", "Josefin Sans", Helvetica, Arial, sans-serif;
-    font-family: "Monaco", monospace;*/
+    font-family: "Monaco", monospace;
+    color: #6bd9ca !important;*/
     font-size: 2.8em !important;
-    color: #051c33;
     margin: 0;
   }
 
@@ -311,8 +329,8 @@ input {
     word-wrap: break-word;
     width: 95vw;
     line-Height: 1.3;
-    text-align: center;
-    font-size: 2.6em;
+    text-align: left;
+    font-size: 2.0em;
     font-weight: 500;
   }
 
@@ -320,27 +338,33 @@ input {
     word-wrap: break-word;
     width: 95vw;
     line-Height: 1.6;
-    text-align: center;
+    text-align: left;
     margin: 20px 0px 30px 0px;
   }
 
   .emphasisText {
-    color: #000;
-    font-weight: 500;
+    color: #6bd9ca;
+    font-weight: 600;
   }
 
   .blackButton {
-    /*width: 100%;
-    display: block;*/
-    background: #74e8d900;
-    border-radius: 3px;
-    padding: 5px 16px;
+    padding: 5px 7px;
     color: #000;
     border: none;
     font-size: 1.1em;
-    float: right;
-    display: inline-block; 
     margin-top: 1.75em;
+  }
+
+  .headerDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #showMeDescription {
+    clear: both;
+    display: inline-block;
+    max-width: 250px;
   }
 
 }

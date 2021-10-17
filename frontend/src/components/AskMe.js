@@ -1,4 +1,5 @@
 // Import dependencies
+import Typist from 'react-typist';
 import React, { useState, componentWillUnmount, useRef, useContext, useEffect } from "react";
 import "../App.css";
 import "./AskMe.css";
@@ -12,29 +13,64 @@ import { apiKey } from "../api/config";
 
 function AskMe() {
 
+  const [showResults, setShowResults] = React.useState(false)
+  const onClickStart = () => setShowResults(true)
+
   return (
-    <div>
-      <div class="d_table">
-        <div class="d_tr">
-          <div class="d_td">
-            <div class="d_tr" >
-                Please ask a question to the MIC
-                <div className="d_table">
+    <div style={{paddingTop: "8vh"}}>
+      <div className="d_table">
+        <div className="d_tr">
+          <div className="d_td">
+            <div className="d_tr">
+                <div className="titleText">Ask me something!</div> 
+
+                <div className="d_table" style={{padding: "3vh 0px"}}>
                     <div className="d_tr" >
                         <div id="viz" className="d_td">
-                          <div class="real-time-interface">
-                            <p id="real-time-title" class="real-time-interface__title">Click start to begin recording!</p>
-                            <p id="button" class="real-time-interface__button" style={{padding:'10px 50px'}} 
-                                 >Start</p>
-                            <p id="message" class="real-time-interface__message"></p>
+                          <div className="real-time-interface">
+                            <p id="real-time-title" className="real-time-interface__title">Click "Start" to ask a question!</p>
+                            <p id="button" className="real-time-interface__button" onClick={onClickStart}>Start</p><br />
+                            <p className="real-time-interface__title">Your question:</p>
+                            <p id="message" className="real-time-interface__message"><Typist>What food contains Vitamin C?</Typist></p>
                           </div>
                         </div>
                     </div>
                 </div>
             </div>
           </div>
-          <div class="d_td" id="description">Some discriptions here  asdfasf asdfasdf </div>
+          <div className="d_td" id="description"> </div>
         </div>
+        
+        {/* Hardcoded; change if there's time*/}
+        { showResults ?
+      <div id="results" style={{marginTop: "50px"}}>
+        <div className="real-time-interface__title">Results for "What food contains Vitamin C?"</div>
+        <div className="row">
+          <div className="column">
+            <img className="prodImg" src="/img/kiwi.png" />
+          </div>
+          <div className="column">
+            <img className="prodImg" src="/img/orange.png" />
+          </div>
+          <div className="column">
+            <img className="prodImg" src="/img/strawberries.png" />
+          </div>
+        </div>
+        <div className="row">
+          <div className="column">
+            <img className="prodImg" src="/img/papaya.png" />
+          </div>
+          <div className="column">
+            <img className="prodImg" src="/img/tomatoes.png" />
+          </div>
+          <div className="column">
+            <img className="prodImg" src="/img/bellpeppers.png" />
+          </div>
+        </div>
+      </div>
+      : null }
+
+
       </div>
     </div>
   );

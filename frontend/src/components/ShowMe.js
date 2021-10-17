@@ -29,17 +29,17 @@ const ShowMe = () => {
                 //console.log(data)
                 var myImageElement = document.getElementById('myImage');
                 myImageElement.src = 'http://localhost:5000/image?id='+data.id;      
-                var imageDescription = document.getElementById('description');
+                var imageDescription = document.getElementById('showMeDescription');
                 if(imageDescription)
                 {
-                  imageDescription.innerHTML = "<p>id = " + data.id + "<br/>"
-                                              +"label = " + data.label + "<br/>"
-                                              +"score = " + data.score + "<br/>"
-                                              +"time = " + data.time + "</p>";
+                  imageDescription.innerHTML = "<p><b>ID:</b> " + data.id + "<br/>"
+                                              +"<b>Label:</b> " + data.label + "<br/>"
+                                              +"<b>Score:</b> " + data.score + "<br/>"
+                                              +"<b>Time:</b> " + data.time + "</p>";
                   if(data.score < 89)
                   {
                     setLabel("_unknown_");
-                    imageDescription.innerHTML +="<p> instruction on how to use this.</p>"
+                    imageDescription.innerHTML +="<p><b>Instructions:</b><br/> 1. Point your camera at a label with <br/>a circular sticker.<br/>2. Follow the arrow on the screen.</p>"
                   }
                   else if(data.label !== label)                                            
                   {
@@ -50,7 +50,10 @@ const ShowMe = () => {
                         //console.log(detail)
                         //console.log(detail.image, " _______ +++++++++++ DETAIL");
                         imageDescription.innerHTML += "<p>text = " + detail.text + "</p>";
-                      });
+                      })
+                      .catch(err => {
+                        console.log("Error: ", err);
+                      })
                             
                   }
                 }
@@ -63,7 +66,10 @@ const ShowMe = () => {
           ////////////////////////////////////
           fetch('http://localhost:5000/time').then(res => res.json()).then(data => {
             setCurrentTime(data.time);
-          });
+          })
+          .catch(err => {
+            console.log("Error: ", err);
+          })
 
           //console.log(data + " =======================================================")
 
@@ -77,8 +83,14 @@ const ShowMe = () => {
                   console.log(address, '--------------------------$$$$$$$$$')
                   fetch(address).then(res => res.json()).then(data => {
                     set_tfod_item(data);
-                  });
+                  })
+                  .catch(err => {
+                    console.log("Error: ", err);
+                  })
         
+          })
+          .catch(err => {
+            console.log("Error: ", err);
           })
   
 
@@ -90,16 +102,25 @@ const ShowMe = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{paddingTop: "8vh"}}>
       <div className="d_table">
         <div className="d_tr">
-          <div className="d_td"><img id="myImage" src="https://en.pimg.jp/062/891/255/1/62891255.jpg" alt="text"  width="320" height="220"/></div>
-          <div className="d_td" id="description">Some discriptions here  asdfasf asdfasdf  {seconds}</div>
-          <div><h1>{productData.desc} </h1></div>
-          <div><h1>{productData.desc} </h1></div>
-          <div><h1>{productData.desc} </h1></div>
-          <div><h1>{productData.desc} </h1></div>
-
+          <div className="titleText" style={{marginBottom: "40px"}}>Follow the Arrows</div> 
+        </div>
+        <div className="d_tr" id="group">
+          <img id="myImage" src="/img/cameraIcon.jpg" alt="text"  width="320" height="220" style={{borderStyle: "dashed", borderWidth: "1px", borderRadius: "30px"}}/>
+          
+          {/*<div className="d_td" id="description">Seconds: {seconds}</div>*/}
+          <div id="showMeDescription" style={{borderStyle: "none", borderWidth: "1px", borderRadius: "30px", textAlign: "left", margin: "5px",padding: "1.5em", backgroundColor: "#adece9", boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px"}}></div>
+        </div>
+      </div>
+      
+      <div className="d_table" style={{marginTop: "50px"}}>
+        <div className="d_tr">
+            <div>{productData.desc}</div>
+            <div>{productData.desc}</div>
+            <div>{productData.desc}</div>
+            <div>{productData.desc}</div>
         </div>
       </div>
     </div>

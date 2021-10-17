@@ -28,13 +28,13 @@ const Content = () => {
   //ABOUT PAGE
   return (
     <div>
-      <div class="d_table">
+      <div className="d_table">
         <div style={{paddingTop: "8vh"}}>
-          {/*<div class="d_td"><img id="myImage" src="https://en.pimg.jp/062/891/255/1/62891255.jpg" alt="text"/></div>*/}
-          <div class="titleText">
-            Wish grocery shopping was <b class="emphasisText">fun</b> and easy?
+          {/*<div className="d_td"><img id="myImage" src="https://en.pimg.jp/062/891/255/1/62891255.jpg" alt="text"/></div>*/}
+          <div className="titleText">
+            Wish <b className="emphasisText">grocery shopping</b> was <b className="emphasisText">fun</b> and <b className="emphasisText">easy</b>?
           </div>
-          <div class="subText">
+          <div className="subText">
             "Shop with me" is the ultimate tool for making your shopping faster and easier. No more wasting time looking for a food item or squinting at a nutrition fact label.
           </div>
           <Navigation />

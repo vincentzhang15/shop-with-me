@@ -90,14 +90,17 @@ const FindIt = ( history, handleSubmit ) => {
   }, []);
 
   return (
-    <div>
-      <div class="d_table">
-        <div class="d_tr">
-          <div class="d_td">
-            <img id="myImage" src="https://en.pimg.jp/062/891/255/1/62891255.jpg" alt="text"  width="320" height="220"/>
-            <Form history={history} handleSubmit={onSubmit} />
+    <div style={{paddingTop: "8vh"}}>
+      <div className="d_table">
+        <div className="d_tr">
+          <div className="d_td">
+            <div className="titleText" style={{marginBottom: "40px"}}>Take a photo</div> 
+            <img id="myImage" src="/img/cameraIcon.jpg" alt="text"  width="320" height="220" style={{borderStyle: "dashed", borderWidth: "1px", borderRadius: "30px"}}/>
+            {/*<Form history={history} handleSubmit={onSubmit} />*/}
           </div>
-          <div class="d_td" id="description">Some discriptions for find it  {seconds}</div>
+          {/*
+          <div className="d_td" id="description">Some discriptions for find it  {seconds}</div>
+          */}
         </div>
       </div>
     </div>
