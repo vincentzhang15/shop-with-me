@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/vincentzhang15/shop-with-me">
-    <img src="fontend/public/img/logo.gif" alt="Logo" width="256">
+    <img src="/public/img/logo.gif" alt="Logo" width="256">
   </a>
   <br />
 
