@@ -17,12 +17,14 @@ const Tail = ({ history, handleSubmit }) => {
 
   return (
     <nav className="main-nav" style={{position: "absolute", bottom: 0}}>
+      {/*
       <ul>
         <li><button onClick={e => clickMe(e, "emailme",11)}>Email me</button></li>
         <li><button onClick={e => clickMe(e, "whatelse",12)}>What else</button></li>
         <li><button onClick={e => clickMe(e, "testupload",13)}>(Debug)Upload</button></li>
         <li><button onClick={e => clickMe(e, "showme_debug",14)}>(Debug)Show me</button></li>
       </ul>
+      */}
     </nav>
   );
 }

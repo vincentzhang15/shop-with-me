@@ -8,7 +8,7 @@ import fs from "fs";
 import { apiKey } from "../api/config";
 
 
-// sound recorder and tts based on Andrew from Assembly AI
+// sound recorder and tts based on https://github.com/AssemblyAI/realtime-transcription-browser-js-example from Assembly AI
 
 function AskMe() {
 
