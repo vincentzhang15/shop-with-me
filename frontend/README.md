@@ -21,9 +21,9 @@
 </p>
 
 
-## About Shop with me
+## About Shop With Me
 
-"Shop with me" is a web app chatbot that promotes mental wellness. It was built at TechNova2021 in less than 36 hours.
+"Shop with me" is a web app that aims to futurize the in-store gorcery shopping experience. It was built at Hack The Valley V in less than 38 hours.
 
 ## Questions?
 Feel free to message me at gracie#1538 on Discord
