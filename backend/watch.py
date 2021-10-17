@@ -90,7 +90,7 @@ def draw_something(img, lb, x__, y__):
     x2 = int(x + 50 * c)
     y2 = int(y + 50 * s)
 
-    print("draw line", lb, xf, yf, xt, yt, dx, dy, "theta", theta, w, h, x, y)
+    print("draw line", lb, label_to_search, xf, yf, xt, yt, dx, dy, "theta", theta, w, h, x, y)
 
     print("  c s", c, s, " p1 ", x1, y1, " p2 ", x2, y2)
 
@@ -103,6 +103,7 @@ def find_label():
     global label_to_search
     global mycursor
 
+    label_to_search = None
     #my1db = connectdb()
     #my1cursor = mydb.cursor()
     mycursor.execute("select label from findlabel where state=1;")
@@ -167,7 +168,6 @@ while cap.isOpened():
                 min_score_thresh=.8,
                 agnostic_mode=False)
 
-    
     # draw arrow if needed
     if label_to_search:
         target = 0
@@ -192,10 +192,6 @@ while cap.isOpened():
     #print(" category_index", category_index)
     #print(" detection score", detections['detection_scores'])
 
-
-
-
-        
     # display augmented reality images
     img = cv2.resize(image_np_with_detections, (800, 600))
     cv2.imshow('object detection',  img)

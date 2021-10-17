@@ -146,7 +146,20 @@ def get_tfod_item(item_id):
 def find_label(label): #label: item to search for
 
     rowschanged = 0
-    ret = "{ok:'ok'}"
+    ret = "{'ok':'ok'}"
+
+    # reset the previous search flag
+    try:
+        mydb = connectdb()
+        mycursor = mydb.cursor()
+        mycursor.execute(f"update findlabel set state=0;")
+        mydb.commit()
+        mycursor.close()
+        mydb.close()
+    except mysql.connector.Error as error:
+        pass
+    finally:
+        pass
 
     # check if product exists in inventory
     mydb = connectdb()
@@ -161,25 +174,12 @@ def find_label(label): #label: item to search for
     mycursor.close()
 
     if rowschanged == 0:
-        ret = "{ok:'label not found'}"
+        ret = "{'ok':'label not found'}"
 
 
     if rowschanged > 0:
         rowschanged = 0
 
-        # reset the previous search flag
-        try:
-            mydb = connectdb()
-            mycursor = mydb.cursor()
-            mycursor.execute(f"update findlabel set state=0;")
-            mydb.commit()
-            mycursor.close()
-            mydb.close()
-        except mysql.connector.Error as error:
-            pass
-        finally:
-            pass
-        
         # set new item to be searched
         try:
             mydb = connectdb()
@@ -198,7 +198,6 @@ def find_label(label): #label: item to search for
             if mydb.is_connected():
                 mydb.close();        
 
-        
         if rowschanged == 0:
             try:
                 mydb = connectdb()
@@ -218,7 +217,7 @@ def find_label(label): #label: item to search for
                     mydb.close();
 
     if rowschanged == 0:
-        ret = "{ok:'error'}"
+        ret = "{'ok':'error'}"
 
     response = make_response(jsonify(ret))
     response.headers['Content-Type'] = 'application/json'
