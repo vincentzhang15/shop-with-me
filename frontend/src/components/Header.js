@@ -20,7 +20,7 @@ const Header = ({ history, handleSubmit }) => {
     */
     <div>
       <div style={{width: "100%", display: "inline-block", verticalAlign: "middle"}}>
-        <h1 style={{fontSize: "3.5em", float: "left", display: "inline-block", color: "#6bd9ca"}}>Shop with me</h1>
+        <h1 style={{fontSize: "3.5em", float: "left", display: "inline-block", color: "#6bd9ca"}}>Shop With Me.</h1>
         <button className="blackButton" onClick={e => clickMe(e, "about",1)}>About</button>
         <button className="blackButton" onClick={e => clickMe(e, "showme",2)}>Show me</button>
         <button className="blackButton" onClick={e => clickMe(e, "askme",3)}>Ask me</button>

@@ -29,7 +29,7 @@ const Content = () => {
   return (
     <div>
       <div class="d_table">
-        <div style={{paddingTop: "10vh"}}>
+        <div style={{paddingTop: "8vh"}}>
           {/*<div class="d_td"><img id="myImage" src="https://en.pimg.jp/062/891/255/1/62891255.jpg" alt="text"/></div>*/}
           <div class="titleText">
             Wish grocery shopping was <b class="emphasisText">fun</b> and easy?
