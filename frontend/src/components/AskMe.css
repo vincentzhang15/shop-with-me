@@ -28,11 +28,6 @@ header {
   .real-time-interface__button {
     display: inline-block;
     padding:10px 30px;
-    /*padding: .5em;
-    border-radius: .5rem;
-    background: #6b2bd6;
-    width: 5%;
-    */
     border-radius: 50px;
     justify-content: center;
     cursor: pointer;
@@ -47,6 +42,10 @@ header {
     background-color: #fe9e53;
   }
   
+  .real-time-interface__button:focus {
+    background-color: #6bd9ca;
+  }
+
   .real-time-interface__title {
     display: inline-block;
     text-align: left;
@@ -92,7 +91,6 @@ header {
         display: flex;
         text-align: center;
       }
-      
       .real-time-interface__message {
         text-align: center;
       }

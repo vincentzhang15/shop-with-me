@@ -137,6 +137,12 @@ input {
   vertical-Align: middle;
 }
 
+.mobileHeaderDiv {
+  width: 100%;
+  display: inline-block;
+  vertical-Align: middle;
+}
+
 .emphasisText {
   color: #6bd9ca;
 }
@@ -179,6 +185,26 @@ input {
   cursor: pointer;
 }
 
+.blackIcon {
+  /*width: 100%;
+  display: block;*/
+  background: #74e8d900;
+  border-radius: 3px;
+  padding: 5px 16px;
+  color: #fff;
+  border: none;
+  font-size: 1.1em;
+  float: right;
+  display: inline-block; 
+  margin-top: 1.75em;
+}
+
+.blackIcon:hover {
+  background: #74e8d900;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
 
 .main-nav li {
   width: 100%;
@@ -355,7 +381,21 @@ input {
     margin-top: 1.75em;
   }
 
+  .blackIcon {
+    padding: 0px 18px;
+    color: #6bd9ca;
+    border: none;
+    font-size: 1.4em;
+    margin-top: 1.75em;
+  }
+
   .headerDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobileHeaderDiv {
     width: 100%;
     display: flex;
     justify-content: center;
