@@ -627,10 +627,10 @@ DEALINGS IN THE SOFTWARE.
         <script src="audiodisplay.js"></script>
         <script src="audiorecorder.js"></script>
         <script src="audiomain.js"></script>        
-      <div class="d_table">
-        <div class="d_tr">
-          <div class="d_td">
-            <div class="d_tr" >
+      <div className="d_table">
+        <div className="d_tr">
+          <div className="d_td">
+            <div className="d_tr" >
                 Please ask a question to the MIC
                 <div className="d_table">
                     <div className="d_tr" >
@@ -652,7 +652,7 @@ DEALINGS IN THE SOFTWARE.
                 </div>
             </div>
           </div>
-          <div class="d_td" id="description">Some discriptions here  asdfasf asdfasdf </div>
+          <div className="d_td" id="description">Some discriptions here  asdfasf asdfasdf </div>
         </div>
       </div>
     </div>

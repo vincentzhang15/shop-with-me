@@ -128,9 +128,9 @@ function ShowMe_debug() {
 
   return (
     <div>
-      <div class="d_table">
-        <div class="d_tr">
-          <div class="d_td">
+      <div className="d_table">
+        <div className="d_tr">
+          <div className="d_td">
             <div style={{position: "relative"}} >
                 <Webcam
                   ref={webcamRef}
@@ -163,7 +163,7 @@ function ShowMe_debug() {
                 />
             </div>
           </div>
-          <div class="d_td" id="description">Some discriptions here  asdfasf asdfasdf </div>
+          <div className="d_td" id="description">Some discriptions here  asdfasf asdfasdf </div>
         </div>
       </div>
     </div>

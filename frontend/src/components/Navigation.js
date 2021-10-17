@@ -21,7 +21,7 @@ const Navigation = () => {
       <ul>
         <li><button onClick={e => clickMe(e, "showme",2)}>Show me</button></li>
         <li><button onClick={e => clickMe(e, "askme",3)}>Ask me</button></li>
-        <li><button onClick={e => clickMe(e, "findit",4)}>Find it</button></li>
+        <li><button onClick={e => clickMe(e, "findit",4)}>Find me</button></li>
       </ul>
     </nav>
   );
