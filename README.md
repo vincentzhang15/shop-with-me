@@ -21,9 +21,7 @@
 </p>
 
 
-## About Shop With Me
+## About "Shop With Me"
 
 "Shop with me" is a web app that aims to futurize the in-store grocery shopping experience. It was built at Hack The Valley V in less than 38 hours.
 
-## Questions?
-Feel free to message me at gracie#1538 on Discord
